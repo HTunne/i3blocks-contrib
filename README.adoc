@@ -51,6 +51,7 @@ This repository contains a set of scripts (a.k.a. *blocklets*) for link:https://
 | link:wifi[] | Show the strength of your wifi connection in percent
 | link:wlan-dbm[] | Show wifi interface link quality in dBm or percent
 | link:ytdl-mpv[] | Play youtube videos from your clipboard using youtube-dl
+| link:timewarrior[] | Show actively tracked timewarrior task
 |===
 
 It is officially maintained by @kb100 with the help of a bench of active i3blocks crafters.

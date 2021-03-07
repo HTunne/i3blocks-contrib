@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+out=$(timew)
+
+task=$( echo "$out" | grep "Tracking" | awk -F 'Tracking ' '{ print $2 }')
+time=$( echo "$out" | grep "Total" | awk '{ print $2 }')
+
+echo $task $time
+
+[[ "$time" = "0:25:00" ]] && notify-send "You've been working on $task for 25 minutes." "Time for a break."
+
+if [[ "$task" = "break short" && "$time" = "0:05:00" ]]  || [[ "$task" = "break long" && "$time" = "0:15:00" ]]; then
+	notify-send "Play time is over." "Get back to work."
+	paplay bell-counter.wav
+fi
+
