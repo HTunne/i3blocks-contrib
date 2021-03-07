@@ -1,0 +1,2 @@
+wlan=$(nmcli device status | awk -F $'  ' '/ethernet\s*connected/ { print $NF }')
+echo $wlan
