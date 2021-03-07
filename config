@@ -1,0 +1,85 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[timewarrior]
+command=timewarrior/timewarrior
+interval=1
+
+[backlight]
+command=backlight/backlight
+label=☀
+interval=20
+signal=9
+
+[volume]
+command=volume/volume
+LABEL=♪
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
+[ethernet]
+command=ethernet/ethernet
+interval=60
+
+[ssid]
+command=ssid/ssid
+INTERFACE=wlp0s20f3
+interval=60
+separator=false
+
+[wifi]
+command=wifi/wifi
+INTERFACE=wlp0s20f3
+interval=10
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+#label=BAT
+label=⚡
+interval=30
+command=battery/battery
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
+
+[wlan-dbm]
+command=wlan-dbm/wlan-dbm
+IFACE=enp0s20f0u2u1
+USE_PERCENT=1
+
